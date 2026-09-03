@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.fed37fd8.css",
+    "main.js": "/static/js/main.681d160d.js",
+    "static/media/bricolage-var.woff2": "/static/media/bricolage-var.3b1afa4469fa27eb7153.woff2",
+    "static/media/sora-var.woff2": "/static/media/sora-var.7010882fd278e4c9a84e.woff2",
+    "static/media/jetbrains-var.woff2": "/static/media/jetbrains-var.46a60ae0a9bc7ea5c49d.woff2",
+    "static/media/instrument-serif-italic.woff2": "/static/media/instrument-serif-italic.6804771de1c805a5bc75.woff2",
+    "static/media/instrument-serif.woff2": "/static/media/instrument-serif.3134e59245730678fd73.woff2",
+    "index.html": "/index.html",
+    "main.fed37fd8.css.map": "/static/css/main.fed37fd8.css.map",
+    "main.681d160d.js.map": "/static/js/main.681d160d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fed37fd8.css",
+    "static/js/main.681d160d.js"
+  ]
+}
