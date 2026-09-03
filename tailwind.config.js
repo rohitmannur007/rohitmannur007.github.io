@@ -5,18 +5,19 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        serif: ['Fraunces', 'Georgia', 'serif'],
-        sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+        serif: ['"Bricolage Grotesque"', 'system-ui', 'sans-serif'],
+        sans: ['Sora', 'system-ui', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
+        accent: ['"Instrument Serif"', 'Georgia', 'serif'],
       },
       colors: {
-        ink: '#0B0C0E',
-        paper: '#F4F4F6',
-        smoke: '#A0A5B1',
-        faint: '#636A79',
-        surface: '#121418',
-        surface2: '#171A20',
-        amber: '#E28743',
+        ink: '#F4F0E8',
+        paper: '#17140F',
+        smoke: '#6B6357',
+        faint: '#A39A8B',
+        surface: '#FFFFFF',
+        surface2: '#EDE8DC',
+        amber: '#E14A0D',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: { DEFAULT: 'hsl(var(--card))', foreground: 'hsl(var(--card-foreground))' },

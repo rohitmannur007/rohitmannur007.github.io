@@ -3,15 +3,15 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'Fraunces';
-  src: url('./fonts/fraunces-var.woff2') format('woff2');
-  font-weight: 300 700;
+  font-family: 'Bricolage Grotesque';
+  src: url('./fonts/bricolage-var.woff2') format('woff2');
+  font-weight: 300 800;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Plus Jakarta Sans';
-  src: url('./fonts/jakarta-var.woff2') format('woff2');
+  font-family: 'Sora';
+  src: url('./fonts/sora-var.woff2') format('woff2');
   font-weight: 300 700;
   font-style: normal;
   font-display: swap;
@@ -23,27 +23,41 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: 'Instrument Serif';
+  src: url('./fonts/instrument-serif.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Instrument Serif';
+  src: url('./fonts/instrument-serif-italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
 
 :root {
-  --background: 220 14% 5%;
-  --foreground: 240 7% 96%;
-  --card: 222 13% 8%;
-  --card-foreground: 240 7% 96%;
-  --popover: 222 13% 8%;
-  --popover-foreground: 240 7% 96%;
-  --primary: 28 73% 57%;
-  --primary-foreground: 220 14% 5%;
-  --secondary: 222 10% 12%;
-  --secondary-foreground: 240 7% 96%;
-  --muted: 222 10% 12%;
-  --muted-foreground: 220 8% 55%;
-  --accent: 28 73% 57%;
-  --accent-foreground: 220 14% 5%;
-  --destructive: 0 62% 50%;
-  --destructive-foreground: 240 7% 96%;
-  --border: 220 10% 16%;
-  --input: 220 10% 16%;
-  --ring: 28 73% 57%;
+  --background: 40 33% 93%;
+  --foreground: 30 22% 8%;
+  --card: 0 0% 100%;
+  --card-foreground: 30 22% 8%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 30 22% 8%;
+  --primary: 18 83% 47%;
+  --primary-foreground: 40 33% 96%;
+  --secondary: 38 24% 89%;
+  --secondary-foreground: 30 22% 8%;
+  --muted: 38 24% 89%;
+  --muted-foreground: 35 10% 42%;
+  --accent: 18 83% 47%;
+  --accent-foreground: 40 33% 96%;
+  --destructive: 4 62% 46%;
+  --destructive-foreground: 40 33% 96%;
+  --border: 35 16% 84%;
+  --input: 35 16% 84%;
+  --ring: 18 83% 47%;
   --radius: 0.25rem;
 }
 
@@ -59,37 +73,22 @@ html.lenis body {
   scroll-behavior: auto !important;
 }
 
-.marquee-track {
-  animation: marquee 48s linear infinite;
-}
-@keyframes marquee {
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-.chapter-num {
-  font-size: clamp(4rem, 9vw, 7.5rem);
-  color: transparent;
-  -webkit-text-stroke: 1.5px rgba(244, 244, 246, 0.3);
-}
-
 body {
-  background-color: #0b0c0e;
-  color: #f4f4f6;
-  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  background-color: #f4f0e8;
+  color: #17140f;
+  font-family: 'Sora', system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
 }
 
 ::selection {
-  background: #e28743;
-  color: #0b0c0e;
+  background: #e14a0d;
+  color: #f4f0e8;
 }
 
 :focus-visible {
-  outline: 2px solid #e28743;
+  outline: 2px solid #e14a0d;
   outline-offset: 3px;
   border-radius: 1px;
 }
@@ -98,11 +97,11 @@ body {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #0b0c0e;
+  background: #f4f0e8;
 }
 ::-webkit-scrollbar-thumb {
-  background: #23262e;
-  border: 2px solid #0b0c0e;
+  background: #cfc7b8;
+  border: 2px solid #f4f0e8;
   border-radius: 6px;
 }
 
@@ -111,8 +110,38 @@ body {
   inset: 0;
   z-index: 80;
   pointer-events: none;
-  opacity: 0.04;
+  opacity: 0.05;
+  mix-blend-mode: multiply;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.atmo-blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(70px);
+  will-change: transform;
+}
+@keyframes drift1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(9vw, 7vh) scale(1.15); }
+}
+@keyframes drift2 {
+  0%, 100% { transform: translate(0, 0) scale(1.1); }
+  50% { transform: translate(-8vw, 9vh) scale(0.95); }
+}
+@keyframes drift3 {
+  0%, 100% { transform: translate(0, 0) scale(0.95); }
+  50% { transform: translate(7vw, -8vh) scale(1.12); }
+}
+.atmo-1 { animation: drift1 32s ease-in-out infinite; }
+.atmo-2 { animation: drift2 41s ease-in-out infinite; }
+.atmo-3 { animation: drift3 36s ease-in-out infinite; }
+
+.badge-spin {
+  animation: spin 26s linear infinite;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }
 
 .mono-label {
@@ -120,15 +149,15 @@ body {
   font-size: 0.6875rem;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: #636a79;
+  color: #8c8271;
 }
 
 .hairline {
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(23, 20, 15, 0.1);
 }
 
 .hairline-t {
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(23, 20, 15, 0.1);
 }
 
 .u-link {
@@ -164,7 +193,7 @@ body {
 }
 
 .portrait-img {
-  filter: grayscale(45%) contrast(1.06) brightness(0.94);
+  filter: grayscale(28%) contrast(1.05) brightness(0.99);
   transition: filter 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .portrait-frame:hover .portrait-img {
@@ -190,6 +219,21 @@ details.resume-help[open] summary .help-caret {
   transition: background-color 0.4s ease, transform 0.4s ease;
 }
 
+.marquee-track {
+  animation: marquee 48s linear infinite;
+}
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.chapter-num {
+  font-size: clamp(4rem, 9vw, 7.5rem);
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(23, 20, 15, 0.3);
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -205,7 +249,11 @@ details.resume-help[open] summary .help-caret {
     opacity: 1;
     transform: none;
   }
-  .marquee-track {
+  .marquee-track,
+  .atmo-1,
+  .atmo-2,
+  .atmo-3,
+  .badge-spin {
     animation: none !important;
   }
 }

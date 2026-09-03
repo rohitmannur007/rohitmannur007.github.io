@@ -6,7 +6,7 @@ const ExperienceItem = ({ item, open, onToggle, index }) => (
   <Reveal>
     <div data-testid={`experience-role-${index + 1}`} className="relative pl-8 sm:pl-12 pb-14 last:pb-0">
       <span
-        className={`absolute left-0 top-2 w-3 h-3 border ${open ? 'bg-amber border-amber' : 'bg-ink border-white/25'} transition-colors duration-300`}
+        className={`absolute left-0 top-2 w-3 h-3 border ${open ? 'bg-amber border-amber' : 'bg-ink border-black/25'} transition-colors duration-300`}
         aria-hidden="true"
       />
       <button
@@ -44,7 +44,7 @@ const ExperienceItem = ({ item, open, onToggle, index }) => (
           </ul>
           <div className="mt-6 flex flex-wrap gap-2">
             {item.skills.map((s) => (
-              <span key={s} className="font-mono text-[10px] tracking-[0.12em] text-smoke border border-white/10 px-3 py-1.5">
+              <span key={s} className="font-mono text-[10px] tracking-[0.12em] text-smoke border border-black/10 px-3 py-1.5">
                 {s}
               </span>
             ))}
@@ -60,9 +60,9 @@ const Experience = () => {
   return (
     <section id="experience" data-testid="experience-section" className="py-28 sm:py-36 hairline-t">
       <div className="max-w-[1440px] mx-auto px-5 sm:px-8">
-        <SectionLabel num="05" title="EXPERIENCE" sub="Where the operating principles come from." />
+        <SectionLabel num="05" title="EXPERIENCE" sub="Where I have worked, what I owned, and the numbers behind it — click a role to open the full scope." />
         <div data-testid="experience-timeline" className="relative max-w-4xl">
-          <span className="absolute left-[5px] top-3 bottom-3 w-px bg-white/10" aria-hidden="true" />
+          <span className="absolute left-[5px] top-3 bottom-3 w-px bg-black/10" aria-hidden="true" />
           {experience.map((item, i) => (
             <ExperienceItem
               key={item.id}

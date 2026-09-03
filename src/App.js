@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Lenis from 'lenis';
 import { AnimatePresence, motion } from 'framer-motion';
 import Header from './components/Header';
+import Atmosphere from './components/Atmosphere';
 import Home from './pages/Home';
 import ProjectDetail from './pages/ProjectDetail';
 import NotFound from './pages/NotFound';
@@ -74,6 +75,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="grain-overlay" aria-hidden="true" />
+      <Atmosphere />
       <Shell />
     </BrowserRouter>
   );

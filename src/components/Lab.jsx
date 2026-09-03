@@ -4,7 +4,7 @@ import { Reveal, SectionLabel, ArrowUpRight, GitHubIcon } from './Shared';
 
 const TONES = {
   merged: 'text-emerald-400 border-emerald-400/40 bg-emerald-400/5',
-  closed: 'text-smoke border-white/15 bg-white/5',
+  closed: 'text-smoke border-black/15 bg-black/5',
   open: 'text-sky-300 border-sky-300/40 bg-sky-300/5',
   unavailable: 'text-amber border-amber/40 bg-amber/5',
 };
@@ -21,7 +21,7 @@ const LabRow = ({ item }) => {
       </span>
     </>
   );
-  const cls = 'group grid md:grid-cols-12 gap-2 md:gap-4 items-baseline py-6 border-b border-white/8 hover:bg-surface/60 transition-colors duration-300 px-2 -mx-2';
+  const cls = 'group grid md:grid-cols-12 gap-2 md:gap-4 items-baseline py-6 border-b border-black/8 hover:bg-surface/60 transition-colors duration-300 px-2 -mx-2';
   if (item.internal) {
     return (
       <Link data-testid={`lab-item-${item.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`} to={item.link} className={cls}>
@@ -80,11 +80,11 @@ const Lab = () => (
       <SectionLabel
         num="04"
         title="THE LAB"
-        sub="Product intelligence in progress — experiments, investigations, prototypes, and technical rabbit holes worth testing."
+        sub="My workbench — experiments, prototypes, and my real code contributions to open-source tools like DuckDB, DeepEval and LangGraph. Every contribution status is shown honestly."
       />
 
       <Reveal>
-        <div data-testid="lab-experiment-index" className="border-t border-white/8">
+        <div data-testid="lab-experiment-index" className="border-t border-black/8">
           {labItems.map((item) => (
             <LabRow key={item.title} item={item} />
           ))}

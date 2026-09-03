@@ -29,7 +29,7 @@ const Contact = () => (
             href={CONTACT.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.25em] text-paper border border-white/20 px-6 py-3.5 hover:border-amber hover:text-amber transition-colors duration-300"
+            className="inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.25em] text-paper border border-black/20 px-6 py-3.5 hover:border-amber hover:text-amber transition-colors duration-300"
           >
             <LinkedInIcon /> LINKEDIN <ArrowUpRight className="w-3 h-3" />
           </a>
@@ -38,7 +38,7 @@ const Contact = () => (
             href={CONTACT.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.25em] text-paper border border-white/20 px-6 py-3.5 hover:border-amber hover:text-amber transition-colors duration-300"
+            className="inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.25em] text-paper border border-black/20 px-6 py-3.5 hover:border-amber hover:text-amber transition-colors duration-300"
           >
             <GitHubIcon /> GITHUB <ArrowUpRight className="w-3 h-3" />
           </a>

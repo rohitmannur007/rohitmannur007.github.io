@@ -67,7 +67,7 @@ const ProjectDetail = () => {
           </div>
           <div className="mt-8 flex flex-wrap gap-2">
             {project.tags.map((t) => (
-              <span key={t} className="font-mono text-[10px] tracking-[0.12em] text-smoke border border-white/10 px-3 py-1.5">
+              <span key={t} className="font-mono text-[10px] tracking-[0.12em] text-smoke border border-black/10 px-3 py-1.5">
                 {t}
               </span>
             ))}
@@ -77,7 +77,7 @@ const ProjectDetail = () => {
         <nav
           data-testid="detail-stage-indicator"
           aria-label="Case study stages"
-          className="sticky top-16 z-40 mt-14 bg-ink/90 backdrop-blur-md border-y border-white/10"
+          className="sticky top-16 z-40 mt-14 bg-ink/90 backdrop-blur-md border-y border-black/10"
         >
           <div className="max-w-[1440px] mx-auto px-5 sm:px-8 flex gap-6 overflow-x-auto py-4">
             {project.stages.map((s) => (
@@ -133,7 +133,7 @@ const ProjectDetail = () => {
             </Block>
 
             <Block label="WORKFLOW / SYSTEM" id="s-build">
-              <ol className="space-y-0 border-l border-white/10 ml-1">
+              <ol className="space-y-0 border-l border-black/10 ml-1">
                 {d.workflow.map((w, i) => (
                   <li key={i} className="relative pl-8 py-3">
                     <span className="absolute left-[-5px] top-5 w-2.5 h-2.5 bg-ink border border-amber" aria-hidden="true" />
@@ -183,7 +183,7 @@ const ProjectDetail = () => {
                   <ul className="space-y-3">
                     {d.limitations.map((l, i) => (
                       <li key={i} className="flex gap-3 text-smoke text-sm leading-relaxed">
-                        <span className="mt-2 w-3 h-px bg-white/30 shrink-0" aria-hidden="true" />
+                        <span className="mt-2 w-3 h-px bg-black/30 shrink-0" aria-hidden="true" />
                         {l}
                       </li>
                     ))}
@@ -220,7 +220,7 @@ const ProjectDetail = () => {
                 href={project.sourceUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.2em] text-paper border border-white/20 px-6 py-4 hover:border-amber hover:text-amber transition-colors duration-300"
+                className="inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.2em] text-paper border border-black/20 px-6 py-4 hover:border-amber hover:text-amber transition-colors duration-300"
               >
                 <GitHubIcon /> VIEW SOURCE <ArrowUpRight className="w-3 h-3" />
               </a>

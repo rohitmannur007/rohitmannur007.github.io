@@ -7,7 +7,7 @@ const ResearchCard = ({ r, index }) => {
   return (
     <Reveal delay={index * 120}>
       <article data-testid={`research-card-${r.id}`} className="hairline bg-surface flex flex-col h-full">
-        <div className="border-b border-white/8 max-h-72 overflow-hidden">
+        <div className="border-b border-black/8 max-h-72 overflow-hidden">
           <V />
         </div>
         <div className="p-6 sm:p-8 flex flex-col flex-1">
@@ -42,7 +42,7 @@ const ResearchCard = ({ r, index }) => {
             href={r.pdfUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-8 inline-flex items-center gap-2 self-start font-mono text-[11px] tracking-[0.2em] text-paper border border-white/20 px-5 py-3 hover:border-amber hover:text-amber transition-colors duration-300"
+            className="mt-8 inline-flex items-center gap-2 self-start font-mono text-[11px] tracking-[0.2em] text-paper border border-black/20 px-5 py-3 hover:border-amber hover:text-amber transition-colors duration-300"
           >
             <PdfIcon /> READ RESEARCH <ArrowUpRight className="w-3 h-3" />
           </a>
@@ -55,7 +55,11 @@ const ResearchCard = ({ r, index }) => {
 const Research = () => (
   <section id="research" data-testid="research-section" className="py-28 sm:py-36 hairline-t">
     <div className="max-w-[1440px] mx-auto px-5 sm:px-8">
-      <SectionLabel num="03" title="PUBLISHED RESEARCH" sub="Questions before products. Evidence before certainty." />
+      <SectionLabel
+        num="03"
+        title="PUBLISHED RESEARCH"
+        sub="These are the research papers I have written and published — questions before products, evidence before certainty."
+      />
       <div className="grid md:grid-cols-2 gap-8">
         {research.map((r, i) => (
           <ResearchCard key={r.id} r={r} index={i} />

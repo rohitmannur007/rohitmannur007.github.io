@@ -17,7 +17,7 @@ const ProjectLinks = ({ p }) => (
       href={p.caseStudyUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.2em] text-paper border border-white/20 px-5 py-3 hover:border-amber hover:text-amber transition-colors duration-300"
+      className="inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.2em] text-paper border border-black/20 px-5 py-3 hover:border-amber hover:text-amber transition-colors duration-300"
     >
       <PdfIcon /> VIEW CASE STUDY <ArrowUpRight className="w-3 h-3" />
     </a>
@@ -26,7 +26,7 @@ const ProjectLinks = ({ p }) => (
       href={p.sourceUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.2em] text-paper border border-white/20 px-5 py-3 hover:border-amber hover:text-amber transition-colors duration-300"
+      className="inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.2em] text-paper border border-black/20 px-5 py-3 hover:border-amber hover:text-amber transition-colors duration-300"
     >
       <GitHubIcon /> VIEW SOURCE <ArrowUpRight className="w-3 h-3" />
     </a>
@@ -61,7 +61,7 @@ const ProjectCard = ({ p, index }) => {
           <p className="mt-4 font-mono text-[11px] tracking-[0.15em] text-faint">{p.role.toUpperCase()}</p>
           <div className="mt-5 flex flex-wrap gap-2">
             {p.tags.map((t) => (
-              <span key={t} className="font-mono text-[10px] tracking-[0.12em] text-smoke border border-white/10 px-3 py-1.5">
+              <span key={t} className="font-mono text-[10px] tracking-[0.12em] text-smoke border border-black/10 px-3 py-1.5">
                 {t}
               </span>
             ))}
@@ -82,7 +82,7 @@ const SelectedWork = () => {
         <SectionLabel
           num="02"
           title="SELECTED WORK"
-          sub="Case studies in AI systems, decision intelligence, and revenue analytics — each with the breakdown, the PRD, and the source."
+          sub="These are my projects — five real products and analyses I designed and built myself. Click any of them for the full story: the problem, my decisions, the numbers, and the code."
         />
         <div className="space-y-24 sm:space-y-32">
           {featured.map((p, i) => (

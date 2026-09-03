@@ -27,10 +27,10 @@ const ProcessRail = () => {
           <div className="flex flex-col items-center">
             <span
               className={`stage-dot block w-1.5 h-1.5 rounded-full ${
-                i === active ? 'bg-amber scale-125' : i < active ? 'bg-smoke' : 'bg-white/15'
+                i === active ? 'bg-amber scale-125' : i < active ? 'bg-smoke' : 'bg-black/15'
               }`}
             />
-            {i < STAGES.length - 1 && <span className={`block w-px h-8 ${i < active ? 'bg-smoke/50' : 'bg-white/10'}`} />}
+            {i < STAGES.length - 1 && <span className={`block w-px h-8 ${i < active ? 'bg-smoke/50' : 'bg-black/10'}`} />}
           </div>
           <span
             className={`font-mono text-[9px] tracking-[0.3em] transition-colors duration-500 ${

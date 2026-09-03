@@ -144,7 +144,7 @@ const ResumeSection = () => {
                 data-testid="resume-download-button"
                 href={href}
                 download="Rohit-Mannur-Resume.pdf"
-                className="inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.25em] text-paper border border-white/20 px-7 py-4 hover:border-amber hover:text-amber transition-colors duration-300"
+                className="inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.25em] text-paper border border-black/20 px-7 py-4 hover:border-amber hover:text-amber transition-colors duration-300"
               >
                 DOWNLOAD PDF <ArrowDown />
               </a>
@@ -168,7 +168,7 @@ const ResumeSection = () => {
                 <li className="flex gap-3"><span className="font-mono text-amber text-xs mt-0.5">2.</span>Commit the change and push to <code className="font-mono text-paper text-xs">main</code>.</li>
                 <li className="flex gap-3"><span className="font-mono text-amber text-xs mt-0.5">3.</span>GitHub Actions rebuilds and redeploys the site automatically — the new resume goes live everywhere.</li>
               </ol>
-              <p className="mt-5 pt-4 border-t border-white/8 font-mono text-[10px] tracking-[0.15em] text-faint leading-relaxed">
+              <p className="mt-5 pt-4 border-t border-black/8 font-mono text-[10px] tracking-[0.15em] text-faint leading-relaxed">
                 THE UPDATE BUTTON ABOVE WORKS INSTANTLY ON THIS HOSTED SITE. THE GITHUB METHOD IS FOR THE PERMANENT STATIC COPY.
               </p>
             </details>
@@ -197,7 +197,7 @@ const ResumeSection = () => {
             <button
               data-testid="resume-file-pick-button"
               onClick={() => fileInputRef.current?.click()}
-              className="w-full border border-dashed border-white/25 hover:border-amber transition-colors duration-300 px-5 py-8 text-center"
+              className="w-full border border-dashed border-black/25 hover:border-amber transition-colors duration-300 px-5 py-8 text-center"
             >
               <UploadIcon className="w-5 h-5 mx-auto text-amber" />
               <span className="block mt-3 font-mono text-[11px] tracking-[0.2em] text-paper">
@@ -229,7 +229,7 @@ const ResumeSection = () => {
               onChange={(e) => setPin(e.target.value)}
               placeholder="••••••••"
               autoComplete="off"
-              className="w-full bg-ink border border-white/15 focus:border-amber px-4 py-3 font-mono text-sm text-paper placeholder:text-faint outline-none transition-colors duration-300"
+              className="w-full bg-ink border border-black/15 focus:border-amber px-4 py-3 font-mono text-sm text-paper placeholder:text-faint outline-none transition-colors duration-300"
             />
 
             <button

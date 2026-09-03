@@ -17,7 +17,7 @@ const Education = () => (
         <Reveal delay={120}>
           <div>
             <p className="mono-label mb-4">CERTIFICATIONS</p>
-            <ul className="divide-y divide-white/8 border-t border-b border-white/8">
+            <ul className="divide-y divide-black/8 border-t border-b border-black/8">
               {certifications.map((c) => (
                 <li key={c.name} className="py-3.5 flex flex-wrap items-baseline justify-between gap-2">
                   <span className="text-paper text-sm">{c.name}</span>

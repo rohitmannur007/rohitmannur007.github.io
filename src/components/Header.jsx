@@ -58,7 +58,7 @@ const Header = () => {
       <header
         data-testid="main-navigation-bar"
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled ? 'bg-ink/85 backdrop-blur-md border-b border-white/10' : 'bg-transparent border-b border-transparent'
+          scrolled ? 'bg-ink/85 backdrop-blur-md border-b border-black/10' : 'bg-transparent border-b border-transparent'
         }`}
       >
         <div className="max-w-[1440px] mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
@@ -88,7 +88,7 @@ const Header = () => {
             <button
               data-testid="nav-link-resume"
               onClick={() => go('resume')}
-              className="hidden sm:inline-block font-mono text-[11px] tracking-[0.25em] text-paper border border-white/20 px-4 py-2 hover:bg-amber hover:text-ink hover:border-amber transition-colors duration-300"
+              className="hidden sm:inline-block font-mono text-[11px] tracking-[0.25em] text-paper border border-black/20 px-4 py-2 hover:bg-amber hover:text-ink hover:border-amber transition-colors duration-300"
             >
               RESUME
             </button>
@@ -113,7 +113,7 @@ const Header = () => {
 
       {open && (
         <div data-testid="mobile-menu" className="fixed inset-0 z-[70] bg-ink flex flex-col md:hidden">
-          <div className="h-16 px-5 flex items-center justify-between border-b border-white/10">
+          <div className="h-16 px-5 flex items-center justify-between border-b border-black/10">
             <span className="font-serif text-lg text-paper">ROHIT<span className="text-amber">.</span></span>
             <button data-testid="mobile-menu-close" onClick={() => setOpen(false)} className="p-2 text-paper" aria-label="Close menu">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="w-6 h-6">
@@ -127,13 +127,13 @@ const Header = () => {
                 key={n.id}
                 data-testid={'mobile-' + n.testId}
                 onClick={() => go(n.id)}
-                className="text-left py-4 border-b border-white/8 group"
+                className="text-left py-4 border-b border-black/8 group"
               >
                 <span className="font-mono text-[10px] tracking-[0.3em] text-faint mr-4">0{i + 1}</span>
                 <span className="font-serif text-3xl text-paper group-hover:text-amber transition-colors duration-300">{n.label}</span>
               </button>
             ))}
-            <button data-testid="mobile-nav-link-resume" onClick={() => go('resume')} className="text-left py-4 border-b border-white/8 group">
+            <button data-testid="mobile-nav-link-resume" onClick={() => go('resume')} className="text-left py-4 border-b border-black/8 group">
               <span className="font-mono text-[10px] tracking-[0.3em] text-faint mr-4">05</span>
               <span className="font-serif text-3xl text-paper group-hover:text-amber transition-colors duration-300">RESUME</span>
             </button>
