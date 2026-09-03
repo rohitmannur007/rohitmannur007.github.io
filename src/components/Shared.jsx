@@ -1,27 +1,27 @@
-import { useEffect, useRef, useState } from 'react';
+import { motion, useReducedMotion } from 'framer-motion';
+
+export const EASE = [0.16, 1, 0.3, 1];
+
+export const scrollToId = (id, offset = -80) => {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const lenis = window.__lenis;
+  if (lenis) lenis.scrollTo(el, { offset, duration: 1.2 });
+  else el.scrollIntoView({ behavior: 'smooth' });
+};
 
 export const Reveal = ({ children, delay = 0, className = '' }) => {
-  const ref = useRef(null);
-  const [inView, setInView] = useState(false);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setInView(true);
-          obs.disconnect();
-        }
-      },
-      { threshold: 0.12 }
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, []);
+  const reduce = useReducedMotion();
   return (
-    <div ref={ref} className={`reveal ${inView ? 'in' : ''} ${className}`} style={{ transitionDelay: `${delay}ms` }}>
+    <motion.div
+      className={className}
+      initial={reduce ? false : { opacity: 0, y: 30, filter: 'blur(6px)' }}
+      whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+      viewport={{ once: true, margin: '-70px' }}
+      transition={{ duration: 0.9, delay: delay / 1000, ease: EASE }}
+    >
       {children}
-    </div>
+    </motion.div>
   );
 };
 

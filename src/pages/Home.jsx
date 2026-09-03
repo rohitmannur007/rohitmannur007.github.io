@@ -1,5 +1,6 @@
 import ProcessRail from '../components/ProcessRail';
 import Hero from '../components/Hero';
+import Marquee from '../components/Marquee';
 import SelectedWork from '../components/SelectedWork';
 import Research from '../components/Research';
 import Lab from '../components/Lab';
@@ -15,6 +16,7 @@ const Home = () => (
     <ProcessRail />
     <main>
       <Hero />
+      <Marquee />
       <SelectedWork />
       <Research />
       <Lab />

@@ -30,13 +30,23 @@ const PRINCIPLES = [
 const Principles = () => (
   <section id="principles" data-testid="principles-section" className="py-28 sm:py-36 hairline-t">
     <div className="max-w-[1440px] mx-auto px-5 sm:px-8">
-      <SectionLabel num="06" title="HOW I BUILD" sub="Four operating principles, derived from the work — not from a poster." />
+      <SectionLabel num="06" title="HOW I BUILD — A MANIFESTO" sub="Four chapters. Derived from the work, not from a poster." />
       <div data-testid="operating-principles-grid">
         {PRINCIPLES.map((p, i) => (
-          <Reveal key={p.num} delay={i * 80}>
-            <div className="grid md:grid-cols-12 gap-4 md:gap-8 py-10 sm:py-12 hairline-t items-baseline">
-              <span className="md:col-span-2 font-mono text-sm text-amber tracking-[0.2em]">{p.num}</span>
-              <h3 className="md:col-span-6 font-serif text-2xl sm:text-3xl lg:text-4xl text-paper leading-tight">{p.statement}</h3>
+          <Reveal key={p.num} delay={i * 60}>
+            <div className="group grid md:grid-cols-12 gap-4 md:gap-8 py-12 sm:py-16 hairline-t items-center">
+              <div className="md:col-span-3 flex md:flex-col items-baseline md:items-start gap-4">
+                <span
+                  className="chapter-num font-serif select-none leading-none transition-all duration-500 group-hover:[-webkit-text-stroke-color:#E28743]"
+                  aria-hidden="true"
+                >
+                  {p.num}
+                </span>
+                <span className="mono-label">CHAPTER {p.num}</span>
+              </div>
+              <h3 className="md:col-span-5 font-serif text-2xl sm:text-3xl lg:text-[2.75rem] text-paper leading-[1.08]">
+                {p.statement}
+              </h3>
               <p className="md:col-span-4 text-smoke text-sm leading-relaxed">{p.support}</p>
             </div>
           </Reveal>

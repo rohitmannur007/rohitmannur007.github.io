@@ -48,7 +48,30 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.marquee-track {
+  animation: marquee 48s linear infinite;
+}
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.chapter-num {
+  font-size: clamp(4rem, 9vw, 7.5rem);
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(244, 244, 246, 0.3);
 }
 
 body {
@@ -181,5 +204,8 @@ details.resume-help[open] summary .help-caret {
   .reveal {
     opacity: 1;
     transform: none;
+  }
+  .marquee-track {
+    animation: none !important;
   }
 }

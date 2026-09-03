@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { scrollToId } from './Shared';
 
 const NAV = [
   { id: 'work', label: 'WORK', testId: 'nav-link-work' },
@@ -23,6 +24,11 @@ const Header = () => {
 
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : '';
+    const lenis = window.__lenis;
+    if (lenis) {
+      if (open) lenis.stop();
+      else lenis.start();
+    }
     return () => {
       document.body.style.overflow = '';
     };
@@ -37,8 +43,7 @@ const Header = () => {
     if (location.pathname !== '/') {
       navigate('/#' + id);
     } else {
-      const el = document.getElementById(id);
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
+      scrollToId(id, -64);
     }
   };
 

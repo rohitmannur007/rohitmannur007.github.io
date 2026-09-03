@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { getProject, projects, STAGE_LABELS } from '../data/projects';
 import { visuals } from '../components/visuals';
 import Footer from '../components/Footer';
-import { ArrowUpRight, GitHubIcon, PdfIcon } from '../components/Shared';
+import { ArrowUpRight, GitHubIcon, PdfIcon, scrollToId } from '../components/Shared';
 import NotFound from './NotFound';
 
 const Block = ({ label, children, id }) => (
@@ -84,7 +84,7 @@ const ProjectDetail = () => {
               <button
                 key={s}
                 data-testid={`stage-${s}`}
-                onClick={() => document.getElementById('s-' + s)?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => scrollToId('s-' + s, -140)}
                 className={`font-mono text-[10px] tracking-[0.22em] whitespace-nowrap transition-colors duration-300 ${
                   activeStage === s ? 'text-amber' : 'text-faint hover:text-smoke'
                 }`}
