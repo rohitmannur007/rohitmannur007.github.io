@@ -29,7 +29,7 @@ const Contact = () => (
               <PhoneIcon className="w-6 h-6 sm:w-7 sm:h-7 shrink-0" />
               {CONTACT.phone}
             </a>
-            <p className="mono-label mt-2 ml-9 sm:ml-11">CALL OR WHATSAPP — SANGLI, IN</p>
+            <p className="mono-label mt-2 ml-9 sm:ml-11">CALL OR WHATSAPP</p>
           </div>
         </div>
       </Reveal>

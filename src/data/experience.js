@@ -1,10 +1,10 @@
 export const experience = [
   {
     id: 'phoenix-express',
-    company: 'Phoenix Express',
+    company: 'Phoenix Ferrous Pvt Ltd',
     role: 'Product Manager',
-    dates: 'May 2024 — Aug 2026',
-    location: 'Sangli',
+    dates: 'May 2024 — June 2026',
+    location: '',
     areas: 'PRODUCT ANALYTICS · REPORTING · PLATFORM WORKFLOWS',
     short:
       'Owned the roadmap for 5+ platform workflows and analyzed 10,000+ operational records with SQL and Python to decide what to build first.',

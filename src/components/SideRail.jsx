@@ -72,7 +72,6 @@ const SideRail = () => (
           <LinkedInIcon className="w-4 h-4" />
         </a>
         <span className="h-px flex-1 bg-black/10" aria-hidden="true" />
-        <span className="font-mono text-[9px] tracking-[0.25em] text-faint">SANGLI, IN</span>
       </div>
     </div>
   </aside>
