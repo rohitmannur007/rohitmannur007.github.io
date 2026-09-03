@@ -79,8 +79,8 @@ const Lab = () => (
     <div className="max-w-[1440px] mx-auto px-5 sm:px-8">
       <SectionLabel
         num="04"
-        title="THE LAB"
-        sub="My workbench — experiments, prototypes, and my real code contributions to open-source tools like DuckDB, DeepEval and LangGraph. Every contribution status is shown honestly."
+        title="LAB & OPEN SOURCE."
+        sub="my workbench — experiments, prototypes, and real code contributions to duckdb, deepeval & langgraph. every status shown honestly."
       />
 
       <Reveal>

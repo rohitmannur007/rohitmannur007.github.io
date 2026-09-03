@@ -1,26 +1,37 @@
-import { Reveal, ArrowUpRight, GitHubIcon, LinkedInIcon, MailIcon, CONTACT } from './Shared';
+import { Reveal, SectionLabel, ArrowUpRight, GitHubIcon, LinkedInIcon, MailIcon, PhoneIcon, CONTACT } from './Shared';
 
 const Contact = () => (
-  <section id="contact" data-testid="contact-section" className="py-32 sm:py-44 hairline-t">
+  <section id="contact" data-testid="contact-section" className="py-32 sm:py-40 hairline-t">
     <div className="max-w-[1440px] mx-auto px-5 sm:px-8">
-      <Reveal>
-        <p className="mono-label mb-8">09 — CONTACT</p>
-      </Reveal>
+      <SectionLabel num="09" title="CONTACT SECTION." sub="one email or one call is enough." />
       <Reveal delay={100}>
-        <h2 data-testid="contact-section-heading" className="font-serif text-paper leading-[1.02] tracking-tight">
+        <h2 data-testid="contact-section-heading" className="font-serif font-bold text-paper leading-[1.0] tracking-tight">
           <span className="block text-4xl sm:text-5xl lg:text-7xl">HAVE A DIFFICULT PROBLEM?</span>
           <span className="block text-4xl sm:text-5xl lg:text-7xl text-amber mt-2">LET'S WORK ON IT.</span>
         </h2>
       </Reveal>
       <Reveal delay={200}>
-        <a
-          data-testid="contact-email-link"
-          href={`mailto:${CONTACT.email}`}
-          className="u-link mt-14 inline-flex items-center gap-3 font-serif text-xl sm:text-3xl lg:text-4xl text-paper hover:text-amber transition-colors duration-300 break-all"
-        >
-          <MailIcon className="w-6 h-6 sm:w-8 sm:h-8 shrink-0" />
-          {CONTACT.email}
-        </a>
+        <div className="mt-14 space-y-6">
+          <a
+            data-testid="contact-email-link"
+            href={`mailto:${CONTACT.email}`}
+            className="u-link inline-flex items-center gap-3 font-serif font-medium text-xl sm:text-3xl lg:text-4xl text-paper hover:text-amber transition-colors duration-300 break-all"
+          >
+            <MailIcon className="w-6 h-6 sm:w-8 sm:h-8 shrink-0" />
+            {CONTACT.email}
+          </a>
+          <div>
+            <a
+              data-testid="contact-phone-link"
+              href={CONTACT.phoneHref}
+              className="u-link inline-flex items-center gap-3 font-serif font-medium text-xl sm:text-3xl lg:text-4xl text-paper hover:text-amber transition-colors duration-300"
+            >
+              <PhoneIcon className="w-6 h-6 sm:w-7 sm:h-7 shrink-0" />
+              {CONTACT.phone}
+            </a>
+            <p className="mono-label mt-2 ml-9 sm:ml-11">CALL OR WHATSAPP — SANGLI, IN</p>
+          </div>
+        </div>
       </Reveal>
       <Reveal delay={300}>
         <div className="mt-12 flex flex-wrap gap-4">

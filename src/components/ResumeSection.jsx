@@ -113,7 +113,7 @@ const ResumeSection = () => {
   return (
     <section id="resume" data-testid="resume-section" className="py-28 sm:py-36 hairline-t">
       <div className="max-w-[1440px] mx-auto px-5 sm:px-8">
-        <SectionLabel num="08" title="RESUME" />
+        <SectionLabel num="08" title="RESUME SECTION." sub="one page, always the latest version — update it from any device." />
         <div className="max-w-3xl">
           <Reveal>
             <h3 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-paper leading-tight">

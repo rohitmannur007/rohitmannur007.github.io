@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { projects } from '../data/projects';
 import { visuals } from './visuals';
 import { Reveal, SectionLabel, ArrowUpRight, GitHubIcon, PdfIcon } from './Shared';
@@ -33,31 +34,32 @@ const ProjectLinks = ({ p }) => (
   </div>
 );
 
-const ProjectCard = ({ p, index }) => {
+const ProjectRow = ({ p, index }) => {
   const Visual = visuals[p.visual];
   const flip = index % 2 === 1;
   return (
     <Reveal>
       <article
         data-testid={`project-card-${p.slug}`}
-        className="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center"
+        className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center py-16 sm:py-20 hairline-t"
       >
-        <div className={`hairline bg-surface overflow-hidden ${flip ? 'lg:order-2' : ''}`}>
-          <Link to={`/work/${p.slug}`} aria-label={`Open ${p.title} breakdown`} className="block hover:opacity-90 transition-opacity duration-300">
-            <Visual />
-          </Link>
-        </div>
-        <div className={flip ? 'lg:order-1' : ''}>
-          <div className="flex items-center gap-4 mb-4">
-            <span className="font-mono text-[11px] tracking-[0.25em] text-amber">{String(index + 1).padStart(2, '0')}</span>
+        <div className={`lg:col-span-7 ${flip ? 'lg:order-2' : ''}`}>
+          <div className="flex items-baseline gap-5 mb-5">
+            <span
+              className="font-serif font-bold text-6xl sm:text-7xl leading-none select-none"
+              style={{ color: 'transparent', WebkitTextStroke: '1.3px rgba(225,74,13,0.7)' }}
+              aria-hidden="true"
+            >
+              {String(index + 1).padStart(2, '0')}
+            </span>
             <span className="mono-label">{p.category}</span>
           </div>
-          <h3 className="font-serif text-3xl sm:text-4xl text-paper leading-tight">
+          <h3 className="font-serif font-bold text-4xl sm:text-5xl lg:text-6xl text-paper leading-[0.95] tracking-tight">
             <Link to={`/work/${p.slug}`} className="u-link hover:text-amber transition-colors duration-300">
               {p.title}
             </Link>
           </h3>
-          <p className="mt-5 text-smoke text-sm sm:text-base leading-relaxed">{p.summary}</p>
+          <p className="mt-6 text-smoke text-base sm:text-lg leading-relaxed max-w-xl">{p.summary}</p>
           <p className="mt-4 font-mono text-[11px] tracking-[0.15em] text-faint">{p.role.toUpperCase()}</p>
           <div className="mt-5 flex flex-wrap gap-2">
             {p.tags.map((t) => (
@@ -68,6 +70,17 @@ const ProjectCard = ({ p, index }) => {
           </div>
           <ProjectLinks p={p} />
         </div>
+        <div className={`lg:col-span-5 ${flip ? 'lg:order-1' : ''}`}>
+          <motion.div
+            whileHover={{ rotate: flip ? 1.2 : -1.2, scale: 1.02 }}
+            transition={{ type: 'spring', stiffness: 200, damping: 20 }}
+            className="hairline bg-surface overflow-hidden shadow-[0_36px_70px_-36px_rgba(23,20,15,0.35)]"
+          >
+            <Link to={`/work/${p.slug}`} aria-label={`Open ${p.title} breakdown`} className="block">
+              <Visual />
+            </Link>
+          </motion.div>
+        </div>
       </article>
     </Reveal>
   );
@@ -77,46 +90,46 @@ const SelectedWork = () => {
   const featured = projects.filter((p) => p.featured);
   const archived = projects.filter((p) => !p.featured);
   return (
-    <section id="work" data-testid="selected-work-section" className="py-28 sm:py-36 hairline-t">
+    <section id="work" data-testid="selected-work-section" className="py-24 sm:py-32">
       <div className="max-w-[1440px] mx-auto px-5 sm:px-8">
         <SectionLabel
           num="02"
-          title="SELECTED WORK"
-          sub="These are my projects — five real products and analyses I designed and built myself. Click any of them for the full story: the problem, my decisions, the numbers, and the code."
+          title="PROJECT SECTION."
+          sub="five products & analyses i designed, built, and measured myself — click any one for the full story: the problem, my decisions, the numbers, the code."
         />
-        <div className="space-y-24 sm:space-y-32">
+        <div className="border-b border-black/10">
           {featured.map((p, i) => (
-            <ProjectCard key={p.slug} p={p} index={i} />
+            <ProjectRow key={p.slug} p={p} index={i} />
           ))}
         </div>
 
-        {archived.map((p) => (
-          <Reveal key={p.slug}>
-            <article
-              data-testid={`project-card-${p.slug}`}
-              className="mt-24 hairline bg-surface p-6 sm:p-8 grid md:grid-cols-12 gap-6 items-center"
-            >
-              <div className="md:col-span-5">
-                <span className="mono-label text-amber">FROM THE ARCHIVE — {p.year}</span>
-                <h3 className="font-serif text-2xl text-paper mt-3">
-                  <Link to={`/work/${p.slug}`} className="u-link hover:text-amber transition-colors duration-300">
-                    {p.title}
-                  </Link>
-                </h3>
-                <p className="mt-3 text-smoke text-sm leading-relaxed">{p.summary}</p>
-              </div>
-              <div className="md:col-span-3 hairline overflow-hidden max-h-44">
-                {(() => {
-                  const V = visuals[p.visual];
-                  return <V />;
-                })()}
-              </div>
-              <div className="md:col-span-4">
-                <ProjectLinks p={p} />
-              </div>
-            </article>
-          </Reveal>
-        ))}
+        {archived.map((p) => {
+          const V = visuals[p.visual];
+          return (
+            <Reveal key={p.slug}>
+              <article
+                data-testid={`project-card-${p.slug}`}
+                className="mt-16 hairline bg-surface p-6 sm:p-10 grid md:grid-cols-12 gap-8 items-center shadow-[0_36px_70px_-40px_rgba(23,20,15,0.3)]"
+              >
+                <div className="md:col-span-5">
+                  <span className="mono-label text-amber">FROM THE ARCHIVE — {p.year}</span>
+                  <h3 className="font-serif font-bold text-3xl sm:text-4xl text-paper mt-4 leading-tight">
+                    <Link to={`/work/${p.slug}`} className="u-link hover:text-amber transition-colors duration-300">
+                      {p.title}
+                    </Link>
+                  </h3>
+                  <p className="mt-4 text-smoke text-sm sm:text-base leading-relaxed">{p.summary}</p>
+                </div>
+                <div className="md:col-span-3 hairline overflow-hidden max-h-48">
+                  <V />
+                </div>
+                <div className="md:col-span-4">
+                  <ProjectLinks p={p} />
+                </div>
+              </article>
+            </Reveal>
+          );
+        })}
       </div>
     </section>
   );

@@ -4,10 +4,13 @@ const Footer = () => (
   <footer data-testid="footer-minimal" className="hairline-t py-10">
     <div className="max-w-[1440px] mx-auto px-5 sm:px-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
       <div>
-        <p className="font-serif text-paper">ROHIT<span className="text-amber">.</span></p>
+        <p className="font-serif font-bold text-paper">ROHIT MANNUR<span className="text-amber">.</span></p>
         <p className="mono-label mt-1">PRODUCT MANAGER — AI · DATA · SYSTEMS</p>
       </div>
       <div className="flex items-center gap-6">
+        <a data-testid="footer-phone-link" href={CONTACT.phoneHref} className="font-mono text-[10px] tracking-[0.15em] text-smoke hover:text-amber transition-colors duration-300">
+          {CONTACT.phone}
+        </a>
         <a data-testid="footer-github-link" href={CONTACT.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-smoke hover:text-amber transition-colors duration-300">
           <GitHubIcon className="w-4.5 h-4.5 w-5 h-5" />
         </a>

@@ -1,3 +1,4 @@
+import SideRail from '../components/SideRail';
 import ProcessRail from '../components/ProcessRail';
 import Hero from '../components/Hero';
 import Marquee from '../components/Marquee';
@@ -13,20 +14,23 @@ import Footer from '../components/Footer';
 
 const Home = () => (
   <>
-    <ProcessRail />
-    <main>
-      <Hero />
-      <Marquee />
-      <SelectedWork />
-      <Research />
-      <Lab />
-      <Experience />
-      <Principles />
-      <Education />
-      <ResumeSection />
-      <Contact />
-    </main>
-    <Footer />
+    <SideRail />
+    <div className="xl:pl-[380px]">
+      <ProcessRail />
+      <main>
+        <Hero />
+        <Marquee />
+        <SelectedWork />
+        <Research />
+        <Lab />
+        <Experience />
+        <Principles />
+        <Education />
+        <ResumeSection />
+        <Contact />
+      </main>
+      <Footer />
+    </div>
   </>
 );
 

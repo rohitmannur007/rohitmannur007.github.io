@@ -19,7 +19,7 @@ const ProcessRail = () => {
   return (
     <aside
       data-testid="process-rail"
-      className="hidden xl:flex fixed left-7 top-1/2 -translate-y-1/2 z-40 flex-col items-start gap-0"
+      className="hidden xl:flex fixed right-7 top-1/2 -translate-y-1/2 z-40 flex-col items-start gap-0"
       aria-label="Process indicator"
     >
       {STAGES.map((s, i) => (

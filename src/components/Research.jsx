@@ -57,8 +57,8 @@ const Research = () => (
     <div className="max-w-[1440px] mx-auto px-5 sm:px-8">
       <SectionLabel
         num="03"
-        title="PUBLISHED RESEARCH"
-        sub="These are the research papers I have written and published — questions before products, evidence before certainty."
+        title="RESEARCH SECTION."
+        sub="two papers i wrote and published — questions before products, evidence before certainty."
       />
       <div className="grid md:grid-cols-2 gap-8">
         {research.map((r, i) => (

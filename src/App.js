@@ -4,6 +4,7 @@ import Lenis from 'lenis';
 import { AnimatePresence, motion } from 'framer-motion';
 import Header from './components/Header';
 import Atmosphere from './components/Atmosphere';
+import WaveField from './components/WaveField';
 import Home from './pages/Home';
 import ProjectDetail from './pages/ProjectDetail';
 import NotFound from './pages/NotFound';
@@ -74,8 +75,9 @@ const Shell = () => {
 function App() {
   return (
     <BrowserRouter>
-      <div className="grain-overlay" aria-hidden="true" />
       <Atmosphere />
+      <WaveField />
+      <div className="grain-overlay" aria-hidden="true" />
       <Shell />
     </BrowserRouter>
   );

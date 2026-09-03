@@ -30,7 +30,7 @@ const PRINCIPLES = [
 const Principles = () => (
   <section id="principles" data-testid="principles-section" className="py-28 sm:py-36 hairline-t">
     <div className="max-w-[1440px] mx-auto px-5 sm:px-8">
-      <SectionLabel num="06" title="HOW I BUILD — A MANIFESTO" sub="Four chapters. Derived from the work, not from a poster." />
+      <SectionLabel num="06" title="HOW I BUILD." sub="four chapters — derived from the work, not from a poster." />
       <div data-testid="operating-principles-grid">
         {PRINCIPLES.map((p, i) => (
           <Reveal key={p.num} delay={i * 60}>
