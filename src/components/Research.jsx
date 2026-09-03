@@ -53,7 +53,7 @@ const ResearchCard = ({ r, index }) => {
 };
 
 const Research = () => (
-  <section id="research" data-testid="research-section" className="py-28 sm:py-36 hairline-t">
+  <section id="research" data-testid="research-section" className="py-16 sm:py-20 hairline-t">
     <div className="max-w-[1440px] mx-auto px-5 sm:px-8">
       <SectionLabel
         num="03"

@@ -89,7 +89,7 @@ const Header = () => {
             <button
               data-testid="nav-link-resume"
               onClick={() => go('resume')}
-              className="hidden sm:inline-block font-mono text-[11px] tracking-[0.25em] text-paper border border-black/20 px-4 py-2 hover:bg-amber hover:text-ink hover:border-amber transition-colors duration-300"
+              className="hidden sm:inline-block font-mono text-[11px] tracking-[0.25em] text-paper border border-black/20 px-4 py-2 hover:bg-amber hover:text-cream hover:border-amber transition-colors duration-300"
             >
               RESUME
             </button>

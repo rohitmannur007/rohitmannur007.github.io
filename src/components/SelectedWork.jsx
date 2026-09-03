@@ -5,11 +5,11 @@ import { visuals } from './visuals';
 import { Reveal, SectionLabel, ArrowUpRight, GitHubIcon, PdfIcon } from './Shared';
 
 const ProjectLinks = ({ p }) => (
-  <div className="flex flex-wrap items-center gap-3 mt-7">
+  <div className="flex flex-wrap items-center gap-3 mt-6">
     <Link
       data-testid={`breakdown-${p.slug}`}
       to={`/work/${p.slug}`}
-      className="font-mono text-[11px] tracking-[0.2em] bg-amber text-ink px-5 py-3 hover:bg-paper transition-colors duration-300"
+      className="font-mono text-[11px] tracking-[0.2em] bg-amber text-cream px-5 py-3 hover:bg-paper hover:text-ink transition-colors duration-300"
     >
       READ THE BREAKDOWN
     </Link>
@@ -41,27 +41,27 @@ const ProjectRow = ({ p, index }) => {
     <Reveal>
       <article
         data-testid={`project-card-${p.slug}`}
-        className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center py-16 sm:py-20 hairline-t"
+        className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center py-12 sm:py-14 hairline-t"
       >
         <div className={`lg:col-span-7 ${flip ? 'lg:order-2' : ''}`}>
-          <div className="flex items-baseline gap-5 mb-5">
+          <div className="flex items-baseline gap-5 mb-4">
             <span
-              className="font-serif font-bold text-6xl sm:text-7xl leading-none select-none"
-              style={{ color: 'transparent', WebkitTextStroke: '1.3px rgba(225,74,13,0.7)' }}
+              className="font-serif font-bold text-5xl sm:text-6xl leading-none select-none"
+              style={{ color: 'transparent', WebkitTextStroke: '1.3px rgba(232,85,30,0.75)' }}
               aria-hidden="true"
             >
               {String(index + 1).padStart(2, '0')}
             </span>
             <span className="mono-label">{p.category}</span>
           </div>
-          <h3 className="font-serif font-bold text-4xl sm:text-5xl lg:text-6xl text-paper leading-[0.95] tracking-tight">
+          <h3 className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl text-paper leading-[0.98] tracking-tight">
             <Link to={`/work/${p.slug}`} className="u-link hover:text-amber transition-colors duration-300">
               {p.title}
             </Link>
           </h3>
-          <p className="mt-6 text-smoke text-base sm:text-lg leading-relaxed max-w-xl">{p.summary}</p>
-          <p className="mt-4 font-mono text-[11px] tracking-[0.15em] text-faint">{p.role.toUpperCase()}</p>
-          <div className="mt-5 flex flex-wrap gap-2">
+          <p className="mt-4 text-smoke text-sm sm:text-base leading-relaxed max-w-xl">{p.summary}</p>
+          <p className="mt-3 font-mono text-[11px] tracking-[0.15em] text-faint">{p.role.toUpperCase()}</p>
+          <div className="mt-4 flex flex-wrap gap-2">
             {p.tags.map((t) => (
               <span key={t} className="font-mono text-[10px] tracking-[0.12em] text-smoke border border-black/10 px-3 py-1.5">
                 {t}
@@ -74,7 +74,7 @@ const ProjectRow = ({ p, index }) => {
           <motion.div
             whileHover={{ rotate: flip ? 1.2 : -1.2, scale: 1.02 }}
             transition={{ type: 'spring', stiffness: 200, damping: 20 }}
-            className="hairline bg-surface overflow-hidden shadow-[0_36px_70px_-36px_rgba(23,20,15,0.35)]"
+            className="hairline bg-surface overflow-hidden shadow-[0_36px_70px_-36px_rgba(0,0,0,0.5)]"
           >
             <Link to={`/work/${p.slug}`} aria-label={`Open ${p.title} breakdown`} className="block">
               <Visual />
@@ -90,7 +90,7 @@ const SelectedWork = () => {
   const featured = projects.filter((p) => p.featured);
   const archived = projects.filter((p) => !p.featured);
   return (
-    <section id="work" data-testid="selected-work-section" className="py-24 sm:py-32">
+    <section id="work" data-testid="selected-work-section" className="py-16 sm:py-20">
       <div className="max-w-[1440px] mx-auto px-5 sm:px-8">
         <SectionLabel
           num="02"
@@ -109,18 +109,18 @@ const SelectedWork = () => {
             <Reveal key={p.slug}>
               <article
                 data-testid={`project-card-${p.slug}`}
-                className="mt-16 hairline bg-surface p-6 sm:p-10 grid md:grid-cols-12 gap-8 items-center shadow-[0_36px_70px_-40px_rgba(23,20,15,0.3)]"
+                className="mt-12 hairline bg-surface p-6 sm:p-8 grid md:grid-cols-12 gap-8 items-center shadow-[0_36px_70px_-40px_rgba(0,0,0,0.5)]"
               >
                 <div className="md:col-span-5">
                   <span className="mono-label text-amber">FROM THE ARCHIVE — {p.year}</span>
-                  <h3 className="font-serif font-bold text-3xl sm:text-4xl text-paper mt-4 leading-tight">
+                  <h3 className="font-serif font-bold text-2xl sm:text-3xl text-paper mt-3 leading-tight">
                     <Link to={`/work/${p.slug}`} className="u-link hover:text-amber transition-colors duration-300">
                       {p.title}
                     </Link>
                   </h3>
-                  <p className="mt-4 text-smoke text-sm sm:text-base leading-relaxed">{p.summary}</p>
+                  <p className="mt-3 text-smoke text-sm leading-relaxed">{p.summary}</p>
                 </div>
-                <div className="md:col-span-3 hairline overflow-hidden max-h-48">
+                <div className="md:col-span-3 hairline overflow-hidden max-h-44">
                   <V />
                 </div>
                 <div className="md:col-span-4">

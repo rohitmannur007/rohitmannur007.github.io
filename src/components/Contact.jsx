@@ -1,17 +1,17 @@
 import { Reveal, SectionLabel, ArrowUpRight, GitHubIcon, LinkedInIcon, MailIcon, PhoneIcon, CONTACT } from './Shared';
 
 const Contact = () => (
-  <section id="contact" data-testid="contact-section" className="py-32 sm:py-40 hairline-t">
+  <section id="contact" data-testid="contact-section" className="py-20 sm:py-28 hairline-t">
     <div className="max-w-[1440px] mx-auto px-5 sm:px-8">
       <SectionLabel num="09" title="CONTACT SECTION." sub="one email or one call is enough." />
       <Reveal delay={100}>
         <h2 data-testid="contact-section-heading" className="font-serif font-bold text-paper leading-[1.0] tracking-tight">
-          <span className="block text-4xl sm:text-5xl lg:text-7xl">HAVE A DIFFICULT PROBLEM?</span>
-          <span className="block text-4xl sm:text-5xl lg:text-7xl text-amber mt-2">LET'S WORK ON IT.</span>
+          <span className="block text-3xl sm:text-4xl lg:text-6xl">HAVE A DIFFICULT PROBLEM?</span>
+          <span className="block text-3xl sm:text-4xl lg:text-6xl text-amber mt-2">LET'S WORK ON IT.</span>
         </h2>
       </Reveal>
       <Reveal delay={200}>
-        <div className="mt-14 space-y-6">
+        <div className="mt-10 space-y-6">
           <a
             data-testid="contact-email-link"
             href={`mailto:${CONTACT.email}`}

@@ -58,7 +58,7 @@ const ExperienceItem = ({ item, open, onToggle, index }) => (
 const Experience = () => {
   const [openId, setOpenId] = useState(experience[0].id);
   return (
-    <section id="experience" data-testid="experience-section" className="py-28 sm:py-36 hairline-t">
+    <section id="experience" data-testid="experience-section" className="py-16 sm:py-20 hairline-t">
       <div className="max-w-[1440px] mx-auto px-5 sm:px-8">
         <SectionLabel num="05" title="EXPERIENCE SECTION." sub="where i've worked, what i owned, and the numbers behind it — click a role to open the full scope." />
         <div data-testid="experience-timeline" className="relative max-w-4xl">

@@ -211,7 +211,7 @@ const ProjectDetail = () => {
                 href={project.caseStudyUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.2em] bg-amber text-ink px-6 py-4 hover:bg-paper transition-colors duration-300"
+                className="inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.2em] bg-amber text-cream px-6 py-4 hover:bg-paper transition-colors duration-300"
               >
                 <PdfIcon /> READ FULL CASE STUDY <ArrowUpRight className="w-3 h-3" />
               </a>

@@ -75,7 +75,7 @@ const OpenSourceItem = ({ os }) => (
 );
 
 const Lab = () => (
-  <section id="lab" data-testid="lab-section" className="py-28 sm:py-36 hairline-t">
+  <section id="lab" data-testid="lab-section" className="py-16 sm:py-20 hairline-t">
     <div className="max-w-[1440px] mx-auto px-5 sm:px-8">
       <SectionLabel
         num="04"
@@ -91,7 +91,7 @@ const Lab = () => (
         </div>
       </Reveal>
 
-      <div className="mt-24">
+      <div className="mt-16">
         <Reveal>
           <div className="flex flex-wrap items-end justify-between gap-4 mb-8">
             <div>

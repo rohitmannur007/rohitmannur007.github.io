@@ -27,16 +27,16 @@ export const Reveal = ({ children, delay = 0, className = '' }) => {
 
 export const SectionLabel = ({ num, title, sub }) => (
   <Reveal>
-    <div className="mb-14 sm:mb-20">
-      <div className="flex items-center gap-4 mb-6">
+    <div className="mb-10 sm:mb-14">
+      <div className="flex items-center gap-4 mb-5">
         <span className="mono-label text-amber">{num}</span>
         <span className="h-px w-16 bg-black/15" aria-hidden="true" />
         <span className="mono-label">THIS IS THE</span>
       </div>
-      <h2 className="font-serif font-bold uppercase text-paper leading-[0.92] tracking-tight text-[11.5vw] sm:text-6xl lg:text-7xl">
+      <h2 className="font-serif font-bold uppercase text-paper leading-[0.92] tracking-tight text-[10vw] sm:text-5xl lg:text-6xl">
         {title}
       </h2>
-      {sub && <p className="mt-6 font-accent italic text-xl sm:text-2xl text-smoke max-w-2xl leading-snug">{sub}</p>}
+      {sub && <p className="mt-5 font-accent italic text-lg sm:text-xl text-smoke max-w-2xl leading-snug">{sub}</p>}
     </div>
   </Reveal>
 );

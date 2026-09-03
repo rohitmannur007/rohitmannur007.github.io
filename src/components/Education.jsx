@@ -2,7 +2,7 @@ import { education, certifications } from '../data/experience';
 import { Reveal, SectionLabel } from './Shared';
 
 const Education = () => (
-  <section id="education" data-testid="education-certifications-section" className="py-24 sm:py-28 hairline-t">
+  <section id="education" data-testid="education-certifications-section" className="py-14 sm:py-16 hairline-t">
     <div className="max-w-[1440px] mx-auto px-5 sm:px-8">
       <SectionLabel num="07" title="EDUCATION SECTION." sub="quiet on purpose — the work above does the talking." />
       <div className="grid md:grid-cols-2 gap-12">

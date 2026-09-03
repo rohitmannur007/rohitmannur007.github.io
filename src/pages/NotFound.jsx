@@ -13,7 +13,7 @@ const NotFound = () => (
       <Link
         data-testid="back-to-rohit-button"
         to="/"
-        className="mt-10 inline-block font-mono text-[11px] tracking-[0.25em] bg-amber text-ink px-8 py-4 hover:bg-paper transition-colors duration-300"
+        className="mt-10 inline-block font-mono text-[11px] tracking-[0.25em] bg-amber text-cream px-8 py-4 hover:bg-paper transition-colors duration-300"
       >
         BACK TO ROHIT
       </Link>

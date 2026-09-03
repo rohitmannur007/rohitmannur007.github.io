@@ -1,13 +1,13 @@
 const C = {
-  bg: '#FCFAF4',
-  line: 'rgba(23,20,15,0.16)',
-  faint: '#A39A8B',
-  smoke: '#6B6357',
-  paper: '#17140F',
-  amber: '#E14A0D',
-  emerald: '#0E9F6E',
-  sky: '#2563EB',
-  red: '#C2352A',
+  bg: '#453F36',
+  line: 'rgba(241,238,229,0.18)',
+  faint: '#8A8172',
+  smoke: '#B7AF9F',
+  paper: '#F1EEE5',
+  amber: '#E8551E',
+  emerald: '#34C78E',
+  sky: '#6AA5F0',
+  red: '#DC7B6B',
 };
 
 const mono = { fontFamily: 'JetBrains Mono, monospace', letterSpacing: '0.18em' };
@@ -16,10 +16,10 @@ const Frame = ({ children, caption }) => (
   <svg viewBox="0 0 800 600" className="w-full h-full block" role="img" aria-label={caption}>
     <rect width="800" height="600" fill={C.bg} />
     {Array.from({ length: 15 }).map((_, i) => (
-      <line key={'v' + i} x1={50 * (i + 1)} y1="0" x2={50 * (i + 1)} y2="600" stroke="rgba(23,20,15,0.05)" />
+      <line key={'v' + i} x1={50 * (i + 1)} y1="0" x2={50 * (i + 1)} y2="600" stroke="rgba(241,238,229,0.055)" />
     ))}
     {Array.from({ length: 11 }).map((_, i) => (
-      <line key={'h' + i} x1="0" y1={50 * (i + 1)} x2="800" y2={50 * (i + 1)} stroke="rgba(23,20,15,0.05)" />
+      <line key={'h' + i} x1="0" y1={50 * (i + 1)} x2="800" y2={50 * (i + 1)} stroke="rgba(241,238,229,0.055)" />
     ))}
     {children}
     <text x="40" y="568" fill={C.faint} fontSize="13" style={mono}>
@@ -28,7 +28,7 @@ const Frame = ({ children, caption }) => (
   </svg>
 );
 
-const Node = ({ x, y, w = 150, h = 52, label, color = C.smoke, fill = '#FFFFFF' }) => (
+const Node = ({ x, y, w = 150, h = 52, label, color = C.smoke, fill = '#4F493E' }) => (
   <g>
     <rect x={x} y={y} width={w} height={h} fill={fill} stroke={C.line} />
     <rect x={x} y={y} width="3" height={h} fill={color} />
@@ -83,7 +83,7 @@ export const DemandVisual = () => (
     ))}
     <text x={55} y={490} fill={C.faint} fontSize="12" style={mono}>25,000 LEADS</text>
     <Edge x1={170} y1={270} x2={250} y2={270} />
-    <polygon points="300,220 355,270 300,320 245,270" fill="#FFFFFF" stroke={C.line} />
+    <polygon points="300,220 355,270 300,320 245,270" fill="#4F493E" stroke={C.line} />
     <text x={268} y={275} fill={C.paper} fontSize="11" style={mono}>ELIGIBLE?</text>
     <Edge x1={355} y1={270} x2={420} y2={270} />
     <Node x={420} y={120} w={170} label="FIT · 45%" color={C.emerald} />
@@ -105,11 +105,11 @@ export const DemandVisual = () => (
 
 export const VisaVisual = () => (
   <Frame caption="VISA FUNNEL — WHERE THE REVENUE LEAKS">
-    <rect x={60} y={110} width={620} height={64} fill="#FFFFFF" stroke={C.line} />
+    <rect x={60} y={110} width={620} height={64} fill="#4F493E" stroke={C.line} />
     <text x={80} y={148} fill={C.paper} fontSize="14" style={mono}>STARTED — 39,890</text>
-    <rect x={60} y={240} width={454} height={64} fill="#FFFFFF" stroke={C.line} />
+    <rect x={60} y={240} width={454} height={64} fill="#4F493E" stroke={C.line} />
     <text x={80} y={278} fill={C.paper} fontSize="14" style={mono}>SUBMITTED — 29,167</text>
-    <rect x={60} y={370} width={374} height={64} fill="#FFFFFF" stroke={C.line} />
+    <rect x={60} y={370} width={374} height={64} fill="#4F493E" stroke={C.line} />
     <text x={80} y={408} fill={C.paper} fontSize="14" style={mono}>PAID — 24,087</text>
     <text x={540} y={216} fill={C.amber} fontSize="13" style={mono}>−26.88% · 10,723 LOST</text>
     <text x={460} y={346} fill={C.amber} fontSize="13" style={mono}>−17.42% · 5,080 LOST</text>
@@ -128,7 +128,7 @@ export const WishlinkVisual = () => (
     <Edge x1={250} y1={116} x2={330} y2={200} />
     <Edge x1={250} y1={196} x2={330} y2={216} />
     <Edge x1={250} y1={276} x2={330} y2={232} />
-    <polygon points="330,150 520,150 480,300 370,300" fill="#FFFFFF" stroke={C.line} />
+    <polygon points="330,150 520,150 480,300 370,300" fill="#4F493E" stroke={C.line} />
     <text x={376} y={210} fill={C.paper} fontSize="13" style={mono}>COMMERCE</text>
     <text x={382} y={234} fill={C.faint} fontSize="11" style={mono}>FUNNEL</text>
     <Edge x1={425} y1={300} x2={425} y2={360} />
@@ -172,12 +172,12 @@ export const ThermasightVisual = () => (
   <Frame caption="THERMASIGHT — HYPOTHESIS, NOT VALIDATED">
     <defs>
       <linearGradient id="thermal" x1="0" y1="0" x2="1" y2="0">
-        <stop offset="0%" stopColor="#E14A0D" stopOpacity="0.05" />
-        <stop offset="55%" stopColor="#E14A0D" stopOpacity="0.35" />
-        <stop offset="100%" stopColor="#C2352A" stopOpacity="0.55" />
+        <stop offset="0%" stopColor="#E8551E" stopOpacity="0.05" />
+        <stop offset="55%" stopColor="#E8551E" stopOpacity="0.35" />
+        <stop offset="100%" stopColor="#DC7B6B" stopOpacity="0.55" />
       </linearGradient>
     </defs>
-    <rect x={150} y={150} width={300} height={240} fill="#FFFFFF" stroke={C.line} />
+    <rect x={150} y={150} width={300} height={240} fill="#4F493E" stroke={C.line} />
     <line x1={300} y1={150} x2={300} y2={390} stroke={C.line} strokeDasharray="4 4" />
     <rect x={150} y={150} width={300} height={240} fill="url(#thermal)" />
     <text x={205} y={425} fill={C.faint} fontSize="12" style={mono}>PACKAGE — THERMAL EXPOSURE</text>

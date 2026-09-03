@@ -56,7 +56,7 @@ const WaveField = () => {
           const [px, py, s] = pts[r][c];
           if (c < COLS - 1) {
             const [qx, qy] = pts[r][c + 1];
-            ctx.strokeStyle = `rgba(23,20,15,${0.04 + s * 0.05})`;
+            ctx.strokeStyle = `rgba(241,238,229,${0.04 + s * 0.05})`;
             ctx.beginPath();
             ctx.moveTo(px, py);
             ctx.lineTo(qx, qy);
@@ -64,14 +64,14 @@ const WaveField = () => {
           }
           if (r < ROWS - 1) {
             const [qx, qy] = pts[r + 1][c];
-            ctx.strokeStyle = `rgba(23,20,15,${0.03 + s * 0.04})`;
+            ctx.strokeStyle = `rgba(241,238,229,${0.03 + s * 0.04})`;
             ctx.beginPath();
             ctx.moveTo(px, py);
             ctx.lineTo(qx, qy);
             ctx.stroke();
           }
           if ((r * COLS + c) % 37 === 0) {
-            ctx.fillStyle = `rgba(225,74,13,${0.25 + s * 0.25})`;
+            ctx.fillStyle = `rgba(240,96,38,${0.25 + s * 0.25})`;
             ctx.beginPath();
             ctx.arc(px, py, 2.2 * s + 0.5, 0, Math.PI * 2);
             ctx.fill();

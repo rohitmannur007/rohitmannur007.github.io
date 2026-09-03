@@ -111,7 +111,7 @@ const ResumeSection = () => {
   };
 
   return (
-    <section id="resume" data-testid="resume-section" className="py-28 sm:py-36 hairline-t">
+    <section id="resume" data-testid="resume-section" className="py-16 sm:py-24 hairline-t">
       <div className="max-w-[1440px] mx-auto px-5 sm:px-8">
         <SectionLabel num="08" title="RESUME SECTION." sub="one page, always the latest version — update it from any device." />
         <div className="max-w-3xl">
@@ -136,7 +136,7 @@ const ResumeSection = () => {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.25em] bg-amber text-ink px-7 py-4 hover:bg-paper transition-colors duration-300"
+                className="inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.25em] bg-amber text-cream px-7 py-4 hover:bg-paper transition-colors duration-300"
               >
                 <PdfIcon /> VIEW RESUME <ArrowUpRight className="w-3 h-3" />
               </a>
@@ -151,7 +151,7 @@ const ResumeSection = () => {
               <button
                 data-testid="resume-update-button"
                 onClick={() => setModalOpen(true)}
-                className="inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.25em] text-paper border border-amber/50 px-7 py-4 hover:bg-amber hover:text-ink transition-colors duration-300"
+                className="inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.25em] text-paper border border-amber/50 px-7 py-4 hover:bg-amber hover:text-cream transition-colors duration-300"
               >
                 <UploadIcon /> UPDATE RESUME
               </button>
@@ -236,7 +236,7 @@ const ResumeSection = () => {
               data-testid="resume-publish-button"
               onClick={publish}
               disabled={status === 'publishing'}
-              className="mt-6 w-full font-mono text-[11px] tracking-[0.25em] bg-amber text-ink px-6 py-4 hover:bg-paper transition-colors duration-300 disabled:opacity-50"
+              className="mt-6 w-full font-mono text-[11px] tracking-[0.25em] bg-amber text-cream px-6 py-4 hover:bg-paper transition-colors duration-300 disabled:opacity-50"
             >
               {status === 'publishing' ? 'UPDATING…' : 'PUBLISH UPDATE'}
             </button>
