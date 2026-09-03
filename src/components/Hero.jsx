@@ -120,7 +120,6 @@ const Hero = () => {
                 loading="eager"
               />
             </div>
-            <p className="mono-label mt-3">ROHIT MANNUR — SANGLI, IN</p>
           </div>
         </FadeIn>
 
