@@ -28,24 +28,26 @@ Outputs a fully static site to `build/`. The build compiles entirely from reposi
 
 ## Deployment (GitHub Pages)
 
-The repository ships with `.github/workflows/deploy.yml`.
+The site is live at **https://rohitmannur007.github.io/**.
 
-1. Push this project to `https://github.com/rohitmannur007/rohitmannur007.github.io` (the app lives at the repository root — `package.json` at the top level).
-2. In the GitHub repository: **Settings → Pages → Source → GitHub Actions**.
-3. Every push to `main` rebuilds and redeploys automatically.
+Repository layout:
 
-The live site will be `https://rohitmannur007.github.io/`. Direct links and browser refresh on project routes work because `public/404.html` redirects unknown paths back into the SPA.
+- `main` branch — the built static site. GitHub Pages serves this branch directly (Settings → Pages → Deploy from a branch → `main` / root). Every push to `main` redeploys automatically in about a minute — no Actions needed.
+- `source` branch — the full React source code (this project).
+
+To publish changes: edit source → `yarn build` → copy `build/` contents to a checkout of `main` → commit → push.
 
 ## How to replace the resume
 
-The public site always serves the committed resume at `public/resume/current-resume.pdf`.
+**Fastest (no computer tools needed):** open the repository on GitHub → `resume/current-resume.pdf` → replace the file with your new PDF using GitHub's upload (keep the exact filename) → commit. GitHub Pages redeploys automatically in about a minute and the new resume is live.
+
+**From the source code:**
 
 1. Export your new resume as a PDF.
 2. Replace `public/resume/current-resume.pdf` with it — **keep the filename exactly the same**.
-3. Commit and push to `main`.
-4. GitHub Actions rebuilds and redeploys; the new resume is live everywhere.
+3. `yarn build`, copy `build/` to the `main` branch, commit, push.
 
-The same instructions are shown on the site itself (Resume section → "How to update this resume").
+The same instructions are shown on the site itself (Resume section → "Other way to update").
 
 ## How to replace the profile photo
 
